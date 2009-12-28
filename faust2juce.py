@@ -67,15 +67,19 @@ def strip(name):
 
 def processXmlDesc(path):
    from xml.dom.minidom import parse
+   _,file = os.path.split(path)
+   basename,_ = os.path.splitext(file)
+   basename,_ = os.path.splitext(basename)
    dom = parse(path)
    r = {}
    faust = dom.getElementsByTagName("faust")[0]
    plugName = getText(faust.getElementsByTagName("name")[0].childNodes)
-   r["PlugName"] = strip(plugName)
+   r["Description"] = plugName
+   r["PlugName"] = strip(basename)
    r["Author"] = getText(faust.getElementsByTagName("author")[0].childNodes)
    r["Copyright"] = getText(faust.getElementsByTagName("copyright")[0].childNodes)
    r["License"] = getText(faust.getElementsByTagName("license")[0].childNodes)
-   r["version"] = getText(faust.getElementsByTagName("version")[0].childNodes)
+   r["Version"] = getText(faust.getElementsByTagName("version")[0].childNodes)
    r["NumInputs"] = getText(faust.getElementsByTagName("inputs")[0].childNodes)
    r["NumOutputs"] = getText(faust.getElementsByTagName("outputs")[0].childNodes)
    r["AuthorCode"] = makeFourCharCode(r["Author"])
@@ -109,10 +113,13 @@ def faust2juce(scriptDir, file):
    shutil.rmtree(destPath, ignore_errors=True)
    shutil.copytree(projectPath,destPath)
 
+   xcodeDir = destPath+"/build/mac"
+   xcodeproj = xcodeDir + "/FaustPlugin.xcodeproj/project.pbxproj"
+
    # call faust
    print "Call faust:"
-   arch = os.path.join(projectPath, "FaustJuceTemplate.cpp")
-   outputFile = os.path.join(destPath,"demo/src/FaustJuce.cpp")
+   arch = os.path.join(scriptDir, "FaustJuceTemplate.cpp")
+   outputFile = os.path.join(destPath,"src/FaustJuce.cpp")
    cmd = "faust -xml -a " + arch + " -o " + outputFile + " "+ file
    print cmd
    os.system(cmd)
@@ -122,14 +129,12 @@ def faust2juce(scriptDir, file):
    desc = processXmlDesc(xmlDesc)   
 
    # replace xcode project
-   xcodeDir = destPath+"/demo/build/mac"
-   xcodeproj = xcodeDir + "/JuceDemoPlugin.xcodeproj/project.pbxproj"
    processXcodeProj(xcodeproj, desc)
    
-   plist = destPath+"/demo/build/mac/Info.plist"
+   plist = destPath+"/build/mac/Info.plist"
    processPlist(plist)
    
-   jucePlugDesc = destPath+"/demo/src/JucePluginCharacteristics.h"
+   jucePlugDesc = destPath+"/src/JucePluginCharacteristics.h"
    processJucePlugDesc(jucePlugDesc, desc)
 
    # build plug

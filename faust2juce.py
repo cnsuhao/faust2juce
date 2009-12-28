@@ -104,8 +104,9 @@ def processJucePlugDesc(path, desc):
 def faust2juce(scriptDir, file):
    projectPath = os.path.join(scriptDir, "Faust2Juce")
    prefix,ext = os.path.splitext(file)
-   filename = os.path.basename(prefix)
-   destPath = prefix + "-juce"
+   dir,filename = os.path.split(file)
+   #filename,ext = os.path.splitext(filename)
+   destPath = dir + "/juceplugins/" + filename
    
    # duplicate project
    print "Create project:"

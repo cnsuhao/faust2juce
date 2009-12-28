@@ -234,6 +234,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -271,18 +273,20 @@
 							<array>
 								<string>089C166AFE841209C02AAC07</string>
 								<string>08FB77ADFE841716C02AAC07</string>
-								<string>8437929D0EFBF08E002A2725</string>
+								<string>8437929E0EFBF098002A2725</string>
+								<string>8437967C0EFBF5C6002A2725</string>
+								<string>843792B20EFBF157002A2725</string>
+								<string>19C28FB4FE9D528D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
-								<string>453585B710E963B600E931D9</string>
+								<string>4535861B10E9701900E931D9</string>
 								<string>1C37FAAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>0</integer>
+									<integer>22</integer>
+									<integer>16</integer>
+									<integer>15</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -314,14 +318,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>4535858F10E9630700E931D9</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>juce_LibrarySource.mm</string>
+								<string></string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,19 +331,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>4535859010E9630700E931D9</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>juce_LibrarySource.mm</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>453585BD10E963B600E931D9</string>
-										<key>history</key>
-										<array>
-											<string>453585B810E963B600E931D9</string>
-											<string>453585B910E963B600E931D9</string>
-											<string>453585BA10E963B600E931D9</string>
-											<string>453585BB10E963B600E931D9</string>
-											<string>453585BC10E963B600E931D9</string>
-										</array>
+										<string></string>
 									</dict>
 									<key>SplitCount</key>
 									<string>1</string>
@@ -354,18 +344,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1645, 1073}}</string>
+								<string>{{0, 0}, {1645, 0}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 59 1920 1119 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>1073pt</string>
+							<string>0pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>0pt</string>
+							<string>1073pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -379,7 +369,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1645, -27}}</string>
+										<string>{{10, 27}, {1645, 1046}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 59 1920 1119 0 0 1920 1178 </string>
 									</dict>
@@ -397,7 +387,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 31}, {603, 297}}</string>
+										<string>{{10, 27}, {1645, 285}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -435,7 +425,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 31}, {603, 297}}</string>
+										<string>{{10, 27}, {1645, 285}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -463,11 +453,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>453585BE10E963B600E931D9</string>
+				<string>4535861F10E9708B00E931D9</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>453585BF10E963B600E931D9</string>
+				<string>4535862010E9708B00E931D9</string>
 				<string>4535858F10E9630700E931D9</string>
-				<string>453585C010E963B600E931D9</string>
+				<string>4535862110E9708B00E931D9</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>

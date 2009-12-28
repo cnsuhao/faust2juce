@@ -57,20 +57,20 @@
 
 /** The name of your plugin. (Try to keep this as short as possible)
 */
-#define JucePlugin_Name                     "<<PlugName>>"
+#define JucePlugin_Name                     "$(PlugName)"
 
 /** A longer decription of your plugin.
 */
-#define JucePlugin_Desc                     "<<Description>>"
+#define JucePlugin_Desc                     "$(Description)"
 
 /** The name of your company. (Try to keep this as short as possible)
 */
-#define JucePlugin_Manufacturer             "<<Author>>"
+#define JucePlugin_Manufacturer             "$(Author)"
 
 /** A four-character code for your company.
     Use single quotes - this isn't a string!
 */
-#define JucePlugin_ManufacturerCode         <<AuthorCode>>
+#define JucePlugin_ManufacturerCode         $(AuthorCode)
 
 /** A unique four-character code for your plugin.
     Use single quotes - this isn't a string!
@@ -78,7 +78,7 @@
     Note that for AU compatibility, this must contain at least one
     upper-case letter.
 */
-#define JucePlugin_PluginCode               <<PluginCode>>
+#define JucePlugin_PluginCode               $(PluginCode)
 
 //==============================================================================
 /** The maximum number of channels of audio input that the plugin can handle.
@@ -93,7 +93,7 @@
     number of channels that will be used with the AudioProcessor::getNumInputChannels()
     method.
 */
-#define JucePlugin_MaxNumInputChannels              <<NumInputs>>
+#define JucePlugin_MaxNumInputChannels              $(NumInputs)
 
 /** The maximum number of channels of audio output that the plugin can handle.
 
@@ -107,7 +107,7 @@
     number of channels that will be used with the AudioProcessor::getNumOutputChannels()
     method.
 */
-#define JucePlugin_MaxNumOutputChannels             <<NumOutputs>>
+#define JucePlugin_MaxNumOutputChannels             $(NumOutputs)
 
 /** This allows the plugin to specify the configurations of input/output channels that
     they can support.
@@ -129,7 +129,7 @@
     AudioProcessor::getNumOutputChannels() and AudioFilterBase::getNumInputChannels()
     methods.
 */
-#define JucePlugin_PreferredChannelConfigurations   { <<NumInputs>>, <<NumOutputs>> }
+#define JucePlugin_PreferredChannelConfigurations   { $(NumInputs), $(NumOutputs) }
 
 //==============================================================================
 /** Set this value to 1 if your plugin is a synth, or 0 if it isn't.
@@ -172,9 +172,9 @@
 //==============================================================================
 /** A version number
 */
-#define JucePlugin_VersionCode              0x00010100 //<<VersionCode>>
+#define JucePlugin_VersionCode              0x00010100 //$(VersionCode)
 
-#define JucePlugin_VersionString            "1.1" // "<<Version>>"
+#define JucePlugin_VersionString            "1.1" // "$(Version)"
 
 
 //==============================================================================
@@ -231,12 +231,12 @@
     _abcEntry
     _abcViewEntry
 */
-#define JucePlugin_AUExportPrefix           <<PlugName>>AU
+#define JucePlugin_AUExportPrefix           $(PlugName)AU
 
 /** This is the same as JucePlugin_AUExportPrefix, but in quotes
     (needed for the resource compiler...)
 */
-#define JucePlugin_AUExportPrefixQuoted     "<<PlugName>>AU"
+#define JucePlugin_AUExportPrefixQuoted     "$(PlugName)AU"
 
 /** A 4-character manufacturer code - this is your company name.
     You can leave this using the generic value JucePlugin_ManufacturerCode, or
@@ -248,7 +248,7 @@
     plugin's plist, it allows the plugin to work out its own path, which is
     needed if you want to use File::getSpecialLocation (currentExecutableFile)
 */
-#define JucePlugin_CFBundleIdentifier       "org.grame.<<PlugName>>"
+#define JucePlugin_CFBundleIdentifier       "org.grame.$(PlugName)"
 
 /** In an AU, some hosts take the name of Cocoa class that creates the UI and
     actually show it to the user in a list (why??)... Anyway, this macro lets you
@@ -260,7 +260,7 @@
     same class name, the obj-C linker will almost certainly connect the wrong modules together
     and cause total meltdown.
 */
-#define JucePlugin_AUCocoaViewClassName     <<PlugName>>AU_V1
+#define JucePlugin_AUCocoaViewClassName     $(PlugName)AU_V1
 
 //==============================================================================
 /*                                RTAS settings                               */

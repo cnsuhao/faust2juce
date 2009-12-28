@@ -95,7 +95,7 @@ def processJucePlugDesc(path, desc):
    f = open(path, "w")
    for line in lines:
       for item in desc.items():
-         key = "<<" + item[0] + ">>"
+         key = "$(" + item[0] + ")"
          val = item[1]
          line = line.replace(key,val)
       f.write(line)
@@ -105,17 +105,25 @@ def faust2juce(scriptDir, file):
    projectPath = os.path.join(scriptDir, "Faust2Juce")
    prefix,ext = os.path.splitext(file)
    dir,filename = os.path.split(file)
-   #filename,ext = os.path.splitext(filename)
    destPath = dir + "/juceplugins/" + filename
+   filename,ext = os.path.splitext(filename)
    
    # duplicate project
    print "Create project:"
    print destPath
-   shutil.rmtree(destPath, ignore_errors=True)
+   
+   # TODO avoid to remove existing project 
+   # use clean for that
+   if os.path.exists(destPath):
+   	shutil.rmtree(destPath)
    shutil.copytree(projectPath,destPath)
-
+   
    xcodeDir = destPath+"/build/mac"
-   xcodeproj = xcodeDir + "/FaustPlugin.xcodeproj/project.pbxproj"
+   xcodeBundle = xcodeDir + "/FaustPlugin.xcodeproj"
+   newXcodeBundle = (xcodeDir + "/%s.xcodeproj") % filename
+   shutil.move(xcodeBundle, newXcodeBundle)
+   xcodeBundle = newXcodeBundle
+   xcodeproj = xcodeBundle + "/project.pbxproj"
 
    # call faust
    print "Call faust:"
@@ -138,7 +146,7 @@ def faust2juce(scriptDir, file):
    jucePlugDesc = destPath+"/src/JucePluginCharacteristics.h"
    processJucePlugDesc(jucePlugDesc, desc)
 
-   # build plug
+   # build plug (TODO: should be optional)
    oldcwd = os.getcwd()
    os.chdir(xcodeDir)
    os.system("xcodebuild -configuration Release")

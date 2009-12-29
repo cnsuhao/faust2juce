@@ -13,6 +13,7 @@
 		453585C710E9640500E931D9 /* juce_VST_Wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 453585C510E9640500E931D9 /* juce_VST_Wrapper.mm */; };
 		453585CF10E9644F00E931D9 /* juce_AU_Resources.r in Rez */ = {isa = PBXBuildFile; fileRef = 453585CD10E9644F00E931D9 /* juce_AU_Resources.r */; };
 		453585D010E9644F00E931D9 /* juce_AU_Wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 453585CE10E9644F00E931D9 /* juce_AU_Wrapper.mm */; };
+		4535871F10E9FAA000E931D9 /* juce_VST_Wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4535871E10E9FAA000E931D9 /* juce_VST_Wrapper.cpp */; };
 		455CFFEA10E2E439009F485E /* FaustJuce.h in Headers */ = {isa = PBXBuildFile; fileRef = 455CFFE910E2E439009F485E /* FaustJuce.h */; };
 		455CFFEC10E2E4DC009F485E /* FaustJuce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 455CFFEB10E2E4DC009F485E /* FaustJuce.cpp */; };
 		8412B0331048273000072EA3 /* CADebugMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 8412B0321048273000072EA3 /* CADebugMacros.h */; };
@@ -85,6 +86,7 @@
 		453585C510E9640500E931D9 /* juce_VST_Wrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = juce_VST_Wrapper.mm; path = ../../wrapper/VST/juce_VST_Wrapper.mm; sourceTree = SOURCE_ROOT; };
 		453585CD10E9644F00E931D9 /* juce_AU_Resources.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; name = juce_AU_Resources.r; path = ../../wrapper/AU/juce_AU_Resources.r; sourceTree = SOURCE_ROOT; };
 		453585CE10E9644F00E931D9 /* juce_AU_Wrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = juce_AU_Wrapper.mm; path = ../../wrapper/AU/juce_AU_Wrapper.mm; sourceTree = SOURCE_ROOT; };
+		4535871E10E9FAA000E931D9 /* juce_VST_Wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = juce_VST_Wrapper.cpp; path = ../../wrapper/VST/juce_VST_Wrapper.cpp; sourceTree = SOURCE_ROOT; };
 		455CFFE910E2E439009F485E /* FaustJuce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaustJuce.h; path = ../../src/FaustJuce.h; sourceTree = SOURCE_ROOT; };
 		455CFFEB10E2E4DC009F485E /* FaustJuce.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FaustJuce.cpp; path = ../../src/FaustJuce.cpp; sourceTree = SOURCE_ROOT; };
 		8412B0321048273000072EA3 /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 		8437967C0EFBF5C6002A2725 /* Juce VST Wrapper */ = {
 			isa = PBXGroup;
 			children = (
+				4535871E10E9FAA000E931D9 /* juce_VST_Wrapper.cpp */,
 				453585C510E9640500E931D9 /* juce_VST_Wrapper.mm */,
 			);
 			name = "Juce VST Wrapper";
@@ -527,6 +530,7 @@
 				455CFFEC10E2E4DC009F485E /* FaustJuce.cpp in Sources */,
 				453585C710E9640500E931D9 /* juce_VST_Wrapper.mm in Sources */,
 				453585D010E9644F00E931D9 /* juce_AU_Wrapper.mm in Sources */,
+				4535871F10E9FAA000E931D9 /* juce_VST_Wrapper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,7 +545,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GENERATE_PKGINFO_FILE = YES;
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../../vstsdk2.4\"",
+					"\"$(SRCROOT)/../../vstsdk2.4\"",
 					"$(HEADER_SEARCH_PATHS)",
 				);
 				INFOPLIST_FILE = Info.plist;
@@ -567,7 +571,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GENERATE_PKGINFO_FILE = YES;
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../../vstsdk2.4\"",
+					"\"$(SRCROOT)/../../vstsdk2.4\"",
 					"$(HEADER_SEARCH_PATHS)",
 				);
 				INFOPLIST_FILE = Info.plist;
@@ -593,7 +597,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_VERSION = 4.0;
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../..\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../..\"";
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -608,7 +612,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = 4.0;
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../..\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../..\"";
 				INFOPLIST_PREPROCESS = YES;
 				SDKROOT = macosx10.5;
 			};
